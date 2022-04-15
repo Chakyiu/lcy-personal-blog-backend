@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "exec": "ts-node-dev --inspect=0.0.0.0:9229 -r tsconfig-paths/register -r dotenv/config src/index.ts",
+  "ext": "ts",
+  "delay": "1500"
+}
