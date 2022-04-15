@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:5.0.2
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$DB_USER
+      - MONGO_INITDB_ROOT_PASSWORD=$DB_PASSWORD
+    ports:
+      - $DB_PORT:$DB_PORT
+    networks:
+      - app-network
+    volumes:
+      - mongodb-data:/data/db
+    stdin_open: false
+    tty: false
+
+  app:
+    depends_on:
+      - mongodb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    networks:
+      - app-network
+    links:
+      - mongodb
+
+networks:
+  app-network:
+    name: app-network
+    driver: bridge
+
+volumes:
+  mongodb-data:
+    name: mongodb-data
