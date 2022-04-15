@@ -1,7 +1,7 @@
 {
-    "name": "typescript-maker",
-    "version": "1.2.4",
-    "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
+    "name": "lcy-personal-blog-backend",
+    "version": "1.0.0",
+    "description": "",
     "engines": {
         "node": ">=14"
     },
@@ -15,8 +15,7 @@
         "lint": "eslint . --ext .ts,.tsx",
         "test": "jest"
     },
-    "author": "Dantis Mai <mtd.maithanhdanh@gmail.com>",
-    "license": "Apache-2.0",
+    "author": "Harry CY Li",
     "dependencies": {
         "express": "^4.17.1",
         "module-alias": "^2.2.2",
