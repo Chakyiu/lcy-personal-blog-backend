@@ -23,7 +23,11 @@
     "paths": {
       "@server/*": ["src/*"],
       "@tests/*": ["__tests__/*"],
-      "@config/*": ["src/config/*"]
+      "@config/*": ["src/config/*"],
+      "@controller/*": ["src/controller/*"],
+      "@model": ["src/model"],
+      "@model/*": ["src/model/*"],
+      "@routes/*": ["src/routes/*"]
     }
   },
   "include": ["src/**/*", "__tests__/**/*"],
